@@ -467,6 +467,7 @@ body {
 
 html, body {
   overflow-x: hidden !important;
+  margin-bottom: 0 !important;
 }
 
 .site {
@@ -489,7 +490,7 @@ hr {
 
 ul,
 ol {
-  margin: 0 0 1.5em 3em;
+  margin: 0 0 1.5em 0;
 }
 
 ul {
@@ -504,6 +505,10 @@ li > ul,
 li > ol {
   margin-bottom: 0;
   margin-left: 1.5em;
+}
+
+li::marker {
+  color: #00838f;
 }
 
 dt {
@@ -537,6 +542,10 @@ table {
 
 .site-header {
   width: 100%;
+}
+
+.header-container {
+  position: relative;
 }
 
 .header-desktop {
@@ -579,26 +588,25 @@ table {
     display: none;
   }
 }
-.header-container {
-  position: relative;
-}
-
-.header-container:after {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, rgba(44, 62, 80, 0.5) 0%, rgba(44, 62, 80, 0.05) 20%, rgba(44, 62, 80, 0) 100%);
-}
-
 #breadcrumbs {
   display: none;
 }
 
 @media only screen and (min-width: 768px) {
+  .header-container:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    background: linear-gradient(0deg, rgba(44, 62, 80, 0.5) 0%, rgba(44, 62, 80, 0.05) 30%, rgba(0, 0, 0, 0) 100%);
+  }
+
   #breadcrumbs {
     display: block;
     list-style: none;
-    margin: 10px 0;
+    margin: 10px 0 20px 8px;
     overflow: hidden;
     padding: 0;
     position: absolute;
@@ -607,6 +615,7 @@ table {
     transform: translateX(-50%);
     color: white;
     font-weight: 500;
+    z-index: 1;
   }
   #breadcrumbs a {
     color: white;
@@ -623,14 +632,106 @@ table {
     font-size: 18px;
     font-weight: 100;
   }
-  #breadcrumbs .item-current {
-    color: #CF4F4D;
+}
+.site-footer {
+  width: 100%;
+  background-color: #2C3E50;
+  color: white;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.site-footer .footer-body {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.site-footer .footer-coordonnees {
+  word-break: break-word;
+}
+.site-footer .footer-coordonnees a {
+  text-decoration: underline;
+}
+.site-footer .footer-coordonnees,
+.site-footer .footer-shortlinks,
+.site-footer .footer-useful-link {
+  max-width: 260px;
+  padding: 25px;
+}
+.site-footer h1, .site-footer h2, .site-footer h3, .site-footer h4, .site-footer h5, .site-footer h6 {
+  position: relative;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  color: white;
+}
+.site-footer h1:after, .site-footer h2:after, .site-footer h3:after, .site-footer h4:after, .site-footer h5:after, .site-footer h6:after {
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  content: "";
+  width: 70px;
+  height: 3px;
+  background-color: #00838f;
+}
+.site-footer a {
+  color: white;
+  text-decoration: none;
+}
+.site-footer a:hover {
+  text-decoration: underline;
+}
+.site-footer ul {
+  padding: 0;
+  margin: 0;
+}
+.site-footer li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.site-footer .site-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: #202E3B;
+}
+.site-footer .site-info p {
+  padding: 8px 10px;
+  margin: 0;
+  text-align: center;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.site-footer .site-info p a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.site-footer .site-info .logo-dandev {
+  width: 18px;
+  margin: 0 5px;
+  padding-bottom: 3px;
+}
+
+@media only screen and (min-width: 768px) {
+  .site-footer .footer-body {
+    justify-content: space-evenly;
   }
 }
 /* Links
 --------------------------------------------- */
 a {
   text-decoration: unset;
+  color: #CF4F4D;
+  font-weight: 600;
 }
 a:visited, a:hover, a:focus, a:active {
   text-decoration: underline;
@@ -1519,9 +1620,31 @@ textarea {
   display: block;
 }
 
-.post,
-.page {
-  margin: 0 0 1.5em;
+.type-page,
+.type-post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 80px 25px 50px 25px;
+}
+.type-page h1,
+.type-post h1 {
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 50px;
+  color: rgba(0, 131, 143, 0.65);
+}
+.type-page h2,
+.type-page h3,
+.type-page h4,
+.type-page h5,
+.type-page h6,
+.type-post h2,
+.type-post h3,
+.type-post h4,
+.type-post h5,
+.type-post h6 {
+  color: #bd3741;
 }
 
 .updated:not(.published) {

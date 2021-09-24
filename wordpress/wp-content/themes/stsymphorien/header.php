@@ -9,11 +9,7 @@
  * @package stsymphorien
  */
 
-$args = [
-        'pagename' => 'accueil',
-];
 
-$the_query = new WP_Query($args);
 
 ?>
 <!doctype html>
@@ -44,6 +40,10 @@ $the_query = new WP_Query($args);
                     <div id="tophoraire-button" class="tophoraire-button">Coordonnées & Horaires<span class="material-icons"></span></div>
                     <div id="tophoraire-text-container" class="tophoraire-text-container">
                         <?php if (!is_front_page()) : ?>
+                            <?php $args = [
+                            'pagename' => 'accueil',
+                            ];
+                            $the_query = new WP_Query($args); ?>
                             <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post();endwhile;endif; ?>
                         <?php endif; ?>
                         <?php the_field('horaires'); ?>

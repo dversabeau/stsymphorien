@@ -1,0 +1,105 @@
+.site-footer{
+  width: 100%;
+  background-color: $color__dark-grey;
+  color: white;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .footer-body{
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .footer-coordonnees{
+    word-break: break-word;
+    a{
+      text-decoration: underline;
+    }
+  }
+
+  .footer-coordonnees,
+  .footer-shortlinks,
+  .footer-useful-link{
+    max-width: 260px;
+    padding: 25px;
+  }
+
+  h1, h2, h3, h4, h5, h6{
+    position: relative;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    color: white;
+    &:after{
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      content: '';
+      width: 70px;
+      height: 3px;
+      background-color: $color__bluish-green;
+    }
+  }
+
+  a{
+    color: white;
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+
+  ul{
+    padding: 0;
+    margin: 0;
+  }
+
+  li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .site-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: $color__darker-grey;
+    p{
+      padding: 8px 10px;
+      margin: 0;
+      text-align: center;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    .logo-dandev{
+      width: 18px;
+      margin: 0 5px;
+      padding-bottom: 3px;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .site-footer{
+    .footer-body{
+      justify-content: space-evenly;
+    }
+
+  }
+
+}
