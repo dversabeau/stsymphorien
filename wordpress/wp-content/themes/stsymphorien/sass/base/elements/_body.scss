@@ -1,0 +1,21 @@
+*{
+	box-sizing: border-box;
+}
+
+body {
+	background: $color__background-body; // Fallback for when there is no custom background color defined.
+}
+html, body{
+	overflow-x: hidden !important;
+}
+
+.site{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.site-main{
+	max-width: 1200px;
+	min-height: 1200px;
+}
