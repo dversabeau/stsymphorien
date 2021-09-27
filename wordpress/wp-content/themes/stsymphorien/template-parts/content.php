@@ -21,10 +21,7 @@
 		if ( 'post' === get_post_type() ) :
 			?>
 			<div class="entry-meta">
-				<?php
-				stsymphorien_posted_on();
-				stsymphorien_posted_by();
-				?>
+                <p>Publié le <?php the_date() ?></p>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
@@ -55,9 +52,20 @@
 			)
 		);
 		?>
-	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php stsymphorien_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+        <?php if ('post' === get_post_type() ) {
+			the_post_navigation(
+				array(
+					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'stsymphorien' ) . '</span> <span class="nav-title">%title</span>',
+					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'stsymphorien' ) . '</span> <span class="nav-title">%title</span>',
+				)
+			);
+		} ?>
+
+	</div>
+
+<!--	<footer class="entry-footer">-->
+<!--		--><?php //stsymphorien_entry_footer(); ?>
+<!--	</footer>-->
+
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -1,27 +1,68 @@
-.site {
-	display: grid;
-	grid-template-columns: auto ($size__site-sidebar);
-	grid-template-areas:
-		"header header"
-		"main sidebar"
-		"footer footer";
-}
+.widget-area{
+	max-width: 1200px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
 
-.site-header {
-	grid-area: header;
-}
+	.widget-title{
+		width: 100%;
+		text-align: center;
+		color: white;
+		padding: 15px;
+		h1{
+			font-size: 24px !important;
+			text-transform: uppercase;
+		}
+	}
 
-.site-main {
-	grid-area: main;
-	overflow: hidden; /* Resolves issue with <pre> elements forcing full width. */
-}
+	.widget-last-posts{
+		.widget-title{
+			background-color: $color__yellow;
+		}
+	}
 
-.widget-area {
-	grid-area: sidebar;
-}
+	.widget-contact{
+		.widget-title{
+			background-color: $color__light-red;
+		}
+	}
 
-.site-footer {
-	grid-area: footer;
-}
+	.widget-document{
+		.widget-title{
+			background-color: $color__bluish-green;
+		}
+	}
 
-@import "no-sidebar";
+	.widget-info{
+		.widget-title{
+			background-color: $color__dark-red;
+		}
+	}
+
+	.widget-last-posts,
+	.widget-contact,
+	.widget-document,
+	.widget-info{
+		width: 300px;
+		color: white;
+		background-color: $color__dark-grey;
+		margin: 25px;
+		h1, h2, h3, h4, h5, h6{
+			font-size: 18px;
+			font-weight: 600;
+		}
+	}
+
+	.widget-body{
+		padding: 25px 15px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		a{
+			color: white;
+			font-weight: 500;
+		}
+	}
+}

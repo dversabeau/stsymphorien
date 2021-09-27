@@ -2,7 +2,6 @@
 
 .shortlinks{
   width: 100%;
-  margin: $size__margin-top-section 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   row-gap: 30px;
@@ -84,6 +83,7 @@
 .actualites{
   width: 100vw;
   max-width: 1200px;
+  margin-top: $size__margin-top-section;
 
   .swiper-actualites{
     height: 300px;

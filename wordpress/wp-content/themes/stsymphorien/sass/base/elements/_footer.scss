@@ -7,6 +7,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: $size__margin-top-section;
 
   .footer-body{
     width: 100%;
@@ -50,6 +51,7 @@
   a{
     color: white;
     text-decoration: none;
+    font-weight: 400;
     &:hover{
       text-decoration: underline;
     }

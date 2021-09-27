@@ -47,7 +47,7 @@
             </div>
         </div>
 		<div class="site-info">
-            <p>© 2021 - St Symphorien | Site créé par : <a href=""><img class="logo-dandev" src="<?php bloginfo('template_directory'); ?>/../../images/logo-dandev.png" alt="Logo Dandev">Dandev</a></p>
+            <p>© 2021 - St Symphorien | Site créé par : <a target="_blank" href="https://www.danalexandre-developpement.fr/"><img class="logo-dandev" src="<?php bloginfo('template_directory'); ?>/../../images/logo-dandev.png" alt="Logo Dandev">Dandev</a></p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

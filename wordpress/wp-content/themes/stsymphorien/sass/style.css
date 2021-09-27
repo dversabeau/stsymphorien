@@ -478,9 +478,21 @@ html, body {
 
 .site-main {
   max-width: 1200px;
-  min-height: 1200px;
+  margin-top: 50px;
 }
 
+.body-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media only screen and (min-width: 1025px) {
+  .body-container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
 hr {
   background-color: #ccc;
   border: 0;
@@ -538,6 +550,9 @@ figure {
 table {
   margin: 0 0 1.5em;
   width: 100%;
+}
+table td {
+  border: solid 1px black;
 }
 
 .site-header {
@@ -642,6 +657,7 @@ table {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 50px;
 }
 .site-footer .footer-body {
   width: 100%;
@@ -681,6 +697,7 @@ table {
 .site-footer a {
   color: white;
   text-decoration: none;
+  font-weight: 400;
 }
 .site-footer a:hover {
   text-decoration: underline;
@@ -790,12 +807,83 @@ textarea {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
+.widget-area {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.widget-area .widget-title {
+  width: 100%;
+  text-align: center;
+  color: white;
+  padding: 15px;
+}
+.widget-area .widget-title h1 {
+  font-size: 24px !important;
+  text-transform: uppercase;
+}
+.widget-area .widget-last-posts .widget-title {
+  background-color: #fbc02d;
+}
+.widget-area .widget-contact .widget-title {
+  background-color: #CF4F4D;
+}
+.widget-area .widget-document .widget-title {
+  background-color: #00838f;
+}
+.widget-area .widget-info .widget-title {
+  background-color: #bd3741;
+}
+.widget-area .widget-last-posts,
+.widget-area .widget-contact,
+.widget-area .widget-document,
+.widget-area .widget-info {
+  width: 300px;
+  color: white;
+  background-color: #2C3E50;
+  margin: 25px;
+}
+.widget-area .widget-last-posts h1, .widget-area .widget-last-posts h2, .widget-area .widget-last-posts h3, .widget-area .widget-last-posts h4, .widget-area .widget-last-posts h5, .widget-area .widget-last-posts h6,
+.widget-area .widget-contact h1,
+.widget-area .widget-contact h2,
+.widget-area .widget-contact h3,
+.widget-area .widget-contact h4,
+.widget-area .widget-contact h5,
+.widget-area .widget-contact h6,
+.widget-area .widget-document h1,
+.widget-area .widget-document h2,
+.widget-area .widget-document h3,
+.widget-area .widget-document h4,
+.widget-area .widget-document h5,
+.widget-area .widget-document h6,
+.widget-area .widget-info h1,
+.widget-area .widget-info h2,
+.widget-area .widget-info h3,
+.widget-area .widget-info h4,
+.widget-area .widget-info h5,
+.widget-area .widget-info h6 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.widget-area .widget-body {
+  padding: 25px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.widget-area .widget-body a {
+  color: white;
+  font-weight: 500;
+}
+
 /*--------------------------------------------------------------
 # Pages
 --------------------------------------------------------------*/
 .shortlinks {
   width: 100%;
-  margin: 50px 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   row-gap: 30px;
@@ -859,6 +947,7 @@ textarea {
 .actualites {
   width: 100vw;
   max-width: 1200px;
+  margin-top: 50px;
 }
 .actualites .swiper-actualites {
   height: 300px;
@@ -1621,14 +1710,18 @@ textarea {
 }
 
 .type-page,
-.type-post {
+.type-post,
+.error-404,
+.page-header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 80px 25px 50px 25px;
+  margin: 0 25px 50px 25px;
 }
 .type-page h1,
-.type-post h1 {
+.type-post h1,
+.error-404 h1,
+.page-header h1 {
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 50px;
@@ -1643,7 +1736,17 @@ textarea {
 .type-post h3,
 .type-post h4,
 .type-post h5,
-.type-post h6 {
+.type-post h6,
+.error-404 h2,
+.error-404 h3,
+.error-404 h4,
+.error-404 h5,
+.error-404 h6,
+.page-header h2,
+.page-header h3,
+.page-header h4,
+.page-header h5,
+.page-header h6 {
   color: #bd3741;
 }
 

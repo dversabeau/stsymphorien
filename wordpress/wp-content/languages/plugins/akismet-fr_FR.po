@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Akismet Spam Protection - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-05-07 11:24:07+0000\n"
+"PO-Revision-Date: 2021-09-24 16:19:34+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,46 @@ msgstr ""
 "X-Generator: GlotPress/3.0.0-alpha.2\n"
 "Language: fr\n"
 "Project-Id-Version: Plugins - Akismet Spam Protection - Stable (latest release)\n"
+
+#: views/notice.php:194
+msgid "<a href=\"%1$s\" class=\"button\" target=\"_blank\">Upgrade to %2$s</a>"
+msgstr "<a href=\"%1$s\" class=\"button\" target=\"_blank\">Mettre à niveau vers %2$s</a>"
+
+#: views/notice.php:186
+msgid "Your Akismet usage has been over your plan's limit for three consecutive months. We have restricted your account for the rest of the month. Upgrade your plan so Akismet can continue blocking spam."
+msgstr "Votre utilisation d’Akismet a dépassé la limite de votre forfait pendant trois mois consécutifs. Nous avons restreint votre compte pour le reste du mois. Mettez votre offre à niveau pour qu’Akismet puisse continuer à bloquer les spams."
+
+#: views/notice.php:182
+msgid "Your Akismet usage is nearing your plan's limit for the third consecutive month. We will restrict your account after you reach the limit. Upgrade your plan so Akismet can continue blocking spam."
+msgstr "Votre utilisation d’Akismet approche de la limite de votre offre pour le troisième mois consécutif. Nous restreindrons votre compte si vous atteignez la limite. Mettez votre offre à niveau pour qu’Akismet puisse continuer à bloquer les spams."
+
+#: views/notice.php:179
+msgid "Your Akismet usage has been over your plan's limit for two consecutive months. Next month, we will restrict your account after you reach the limit. Please consider upgrading your plan."
+msgstr "Votre utilisation d’Akismet a dépassé la limite de votre offre pendant deux mois consécutifs. Le mois prochain, nous restreindrons votre compte après que vous ayez atteint la limite. Veuillez envisager de mettre votre offre à niveau."
+
+#: views/notice.php:171
+msgid "Since %s, your account made %s API calls, compared to your plan's limit of %s. <a href=\"%s\" target=\"_blank\">Learn more</a> about usage limits."
+msgstr "Depuis %s, votre compte a effectué %s appels d’API, alors que la limite de votre offre est de %s. <a href=\"%s\" target=\"_blank\">En savoir plus</a> sur les limites d’utilisation."
+
+#: views/notice.php:160
+msgid "Your account has been restricted"
+msgstr "Votre compte a été restreint"
+
+#: views/notice.php:156
+msgid "Your Akismet account usage is approaching your plan's limit"
+msgstr "L’utilisation de votre compte Akismet approche de la limite de votre forfait."
+
+#: views/notice.php:153
+msgid "Your Akismet account usage is over your plan's limit"
+msgstr "L’utilisation de votre compte Akismet dépasse la limite de votre forfait."
+
+#: views/notice.php:117
+msgid "Please enter a new key or <a href=\"%s\" target=\"_blank\">contact Akismet support</a>."
+msgstr "Veuillez saisir une nouvelle clé ou <a href=\"%s\" target=\"_blank\">contactez le support d’Akismet</a>."
+
+#: views/notice.php:116
+msgid "Your API key is no longer valid."
+msgstr "Votre clé API n’est plus valide."
 
 #: views/stats.php:4
 msgid "Anti-Spam Settings"
@@ -333,6 +373,10 @@ msgstr "Akismet filtre les indésirables, vous pouvez donc vous concentrer sur d
 msgid "To continue your service, <a href=\"%s\" target=\"_blank\">upgrade to an Enterprise subscription</a>, which covers an unlimited number of sites."
 msgstr "Pour continuer votre service <a href=\"%s\" target=\"_blank\">migrez vers une inscription Entreprise</a>, qui autorise un nombre de sites illimités."
 
+#: views/notice.php:129
+msgid "Your Plus subscription allows the use of Akismet on only one site. Please <a href=\"%s\" target=\"_blank\">purchase additional Plus subscriptions</a> or upgrade to an Enterprise subscription that allows the use of Akismet on unlimited sites."
+msgstr "Votre abonnement Plus permet l’utilisation d’Akismet sur un seul site. Veuillez <a href=\"%s\" target=\"_blank\">acheter des abonnements Plus supplémentaires</a> ou passer à un abonnement Enterprise qui permet d’utiliser Akismet sur un nombre illimité de sites."
+
 #: views/notice.php:122
 msgid "The connection to akismet.com could not be established. Please refer to <a href=\"%s\" target=\"_blank\">our guide about firewalls</a> and check your server configuration."
 msgstr "La connexion avec akismet.com ne peut pas être établie. Merci de vous référer à <a href=\"%s\" target=\"_blank\">notre guide à propos des firewalls</a> et de vérifier la configuration de votre serveur."
@@ -418,6 +462,14 @@ msgstr "Votre abonnement à %s est suspendu."
 #: views/connect-jp.php:36
 msgid "Your subscription for %s is cancelled."
 msgstr "Votre abonnement à %s est annulé."
+
+#: views/notice.php:134
+msgid "You&#8217;re using Akismet on far too many sites for your Plus subscription."
+msgstr "Vous utilisez Akismet sur bien trop de sites pour votre abonnement Plus."
+
+#: views/notice.php:127
+msgid "You&#8217;re using your Akismet key on more sites than your Plus subscription allows."
+msgstr "Vous utilisez votre clé Askismet sur plus de sites que votre abonnement Plus n’en autorise."
 
 #: views/notice.php:112
 msgid "The key you entered is invalid. Please double-check it."
