@@ -1,0 +1,41 @@
+.wp-block-contact-form-7-contact-form-selector{
+
+  width: 100%;
+  padding: 25px;
+  input[type=text],
+  input[type=email]{
+    width: 100%;
+    max-width: 500px;
+  }
+
+  textarea{
+    resize: none;
+  }
+
+  .wpcf7-list-item{
+    padding: 25px 0 ;
+    margin: 0;
+  }
+
+  .wpcf7-form-control.has-spinner.wpcf7-submit{
+    background: $color__light-red;
+    color: white;
+    border: 2px solid $color__light-red;
+    padding: 6px 30px 8px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: .3s ease-in-out;
+
+    &:hover{
+    background-color: white;
+    color: $color__light-red;
+    transition: .3s ease-in-out;
+    text-decoration: none;
+    }
+  }
+
+}

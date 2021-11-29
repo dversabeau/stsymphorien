@@ -1,5 +1,15 @@
-//Section shortlinks
+//Informations
+.informations{
+  width: 100%;
+  height: auto;
+  margin-bottom: 50px;
+  .informations-container{
+    padding: 15px 25px 8px 25px;
+    background-color: $color__yellow;
+  }
+}
 
+//Section shortlinks
 .shortlinks{
   width: 100%;
   display: grid;
@@ -249,7 +259,7 @@
   width: 100vw;
   max-width: 1200px;
 
-  .echo-container{
+  .echo-container, .gazette-container{
     height: 300px;
     width: 100%;
     background: no-repeat center center;
@@ -275,7 +285,7 @@
             rgba($color__light-red,.05) 100%);
   }
 
-  .echo-container-1:before{
+  .gazette-container-0:before{
     position: absolute;
     top: 0;
     left: 0;
@@ -287,7 +297,7 @@
             rgba($color__bluish-green,.05) 100%);
   }
 
-  .echo-container-2:before{
+  .gazette-container-1:before{
     position: absolute;
     top: 0;
     left: 0;
@@ -299,7 +309,7 @@
             rgba($color__yellow,.05) 100%);
   }
 
-  .title-echos{
+  .title-echos, .title-gazettes{
     color: white;
     font-size: 20px;
     text-align: center;
@@ -307,7 +317,7 @@
     z-index: 2;
   }
 
-  .button-echos{
+  .button-echos, .button-gazettes{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -320,14 +330,29 @@
     text-decoration: none;
     transition: .3s ease-in-out;
   }
+
   .button-echo-0{
     background-color: $color__light-red;
+    &:hover{
+      color: $color__light-red;
+      background-color: white;
+    }
   }
-  .button-echo-1{
+
+  .button-gazette-0{
     background-color: $color__bluish-green;
+    &:hover{
+      color: $color__bluish-green;
+      background-color: white;
+    }
   }
-  .button-echo-2{
+
+  .button-gazette-1{
     background-color: $color__yellow;
+    &:hover{
+      color: $color__yellow;
+      background-color: white;
+    }
   }
 }
 

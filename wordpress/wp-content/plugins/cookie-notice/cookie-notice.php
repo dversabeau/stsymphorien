@@ -2,7 +2,7 @@
 /*
 Plugin Name: Cookie Notice & Compliance for GDPR / CCPA
 Description: Cookie Notice allows you to you elegantly inform users that your site uses cookies and helps you comply with GDPR, CCPA and other data privacy laws.
-Version: 2.1.4
+Version: 2.1.5
 Author: Hu-manity.co
 Author URI: https://hu-manity.co/
 Plugin URI: https://hu-manity.co/
@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) )
  * Cookie Notice class.
  *
  * @class Cookie_Notice
- * @version	2.1.4
+ * @version	2.1.5
  */
 class Cookie_Notice {
 
@@ -85,7 +85,7 @@ class Cookie_Notice {
 			'update_notice'				=> true,
 			'update_delay_date'			=> 0
 		),
-		'version'	=> '2.1.4'
+		'version'	=> '2.1.5'
 	);
 	
 	private static $_instance;
@@ -283,8 +283,8 @@ class Cookie_Notice {
 		if ( ! current_user_can( 'install_plugins' ) )
 			return;
 
-		if ( wp_verify_nonce( esc_attr( $_REQUEST['nonce'] ), 'cn_dismiss_notice' ) ) {
-			$notice_action = empty( $_REQUEST['notice_action'] ) || $_REQUEST['notice_action'] === 'dismiss' ? 'dismiss' : esc_attr( $_REQUEST['notice_action'] );
+		if ( wp_verify_nonce( $_REQUEST['nonce'], 'cn_dismiss_notice' ) ) {
+			$notice_action = empty( $_REQUEST['notice_action'] ) || $_REQUEST['notice_action'] === 'dismiss' ? 'dismiss' : sanitize_text_string( $_REQUEST['notice_action'] );
 
 			switch ( $notice_action ) {
 				// delay notice
@@ -413,6 +413,18 @@ class Cookie_Notice {
 	public static function cookies_accepted() {
 		if ( Cookie_Notice()->get_status() === 'active' ) {
 			$cookies = isset( $_COOKIE['hu-consent'] ) ? json_decode( stripslashes( $_COOKIE['hu-consent'] ), true ) : array();
+			
+			if ( ! empty( $cookies ) && is_array( $cookies ) ) {
+				foreach( $cookies as $cookie_name => $cookie_value ) {
+					switch ( $cookie_name ) {
+						case 'consent':
+							$cookies[$cookie_name] = (bool) $cookie_value;
+							break;
+						default:
+							$cookies[$cookie_name] = is_array( $cookie_value ) ? array_map( 'sanitize_text_field', $cookie_value ) : sanitize_text_field( $cookie_value );
+					}
+				}
+			}
 
 			$result = ( is_array( $cookies ) && json_last_error() === JSON_ERROR_NONE && ! empty( $cookies['consent'] ) ) ? true : false;
 		} else

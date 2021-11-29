@@ -100,7 +100,7 @@ class Cookie_Notice_Welcome_API {
 						array(
 							'AppID'					=> $app_id,
 							'AdminID'				=> $admin_id, // remove later - AdminID from API response
-							'paymentMethodNonce'	=> esc_attr( $_POST['payment_nonce'] )
+							'paymentMethodNonce'	=> sanitize_text_field( $_POST['payment_nonce'] )
 						)
 					);
 					
@@ -137,10 +137,10 @@ class Cookie_Notice_Welcome_API {
 
 			case 'register':
 				$email = is_email( $_POST['email'] );
-				$pass = ! empty( $_POST['pass'] ) ? esc_attr( $_POST['pass'] ) : '';
-				$pass2 = ! empty( $_POST['pass2'] ) ? esc_attr( $_POST['pass2'] ) : '';
+				$pass = ! empty( $_POST['pass'] ) ? $_POST['pass'] : '';
+				$pass2 = ! empty( $_POST['pass2'] ) ? $_POST['pass2'] : '';
 				$terms = isset( $_POST['terms'] );
-				$language = ! empty( $_POST['language'] ) ? esc_attr( $_POST['language'] ) : 'en';
+				$language = ! empty( $_POST['language'] ) ? sanitize_text_field( $_POST['language'] ) : 'en';
 				
 				if ( ! $terms ) {
 					$response = array( 'error' => __( "Please accept the Terms of Service to proceed.", 'cookie-notice' ) );
@@ -152,7 +152,7 @@ class Cookie_Notice_Welcome_API {
 					break;
 				}
 				
-				if ( ! $pass ) {
+				if ( ! $pass || ! is_string( $pass ) ) {
 					$response = array( 'error' => __( 'Password is not allowed to be empty.', 'cookie-notice' ) );
 					break;
 				}
@@ -330,7 +330,7 @@ class Cookie_Notice_Welcome_API {
 
 			case 'login':
 				$email = is_email( $_POST['email'] );
-				$pass = ! empty( $_POST['pass'] ) ? esc_attr( $_POST['pass'] ) : '';
+				$pass = ! empty( $_POST['pass'] ) ? $_POST['pass'] : '';
 				
 				if ( ! $email ) {
 					$response = array( 'error' => __( 'Email is not allowed to be empty.', 'cookie-notice' ) );
@@ -604,7 +604,7 @@ class Cookie_Notice_Welcome_API {
 
 								// any data?
 								if ( is_array( $_POST[$field] ) && ! empty( $_POST[$field] ) ) {
-									$options['laws'] = array_map( 'esc_attr', $_POST[$field] );
+									$options['laws'] = array_map( 'sanitize_text_field', $_POST[$field] );
 
 									foreach ( $options['laws'] as $law ) {
 										if ( in_array( $law, array( 'gdpr', 'ccpa' ), true ) )
@@ -803,7 +803,7 @@ class Cookie_Notice_Welcome_API {
 				if ( is_object( $param ) )
 					$api_params[$key] = $param;
 				else
-					$api_params[$key] = esc_attr( $param );
+					$api_params[$key] = sanitize_text_field( $param );
 			}
 
 			if ( $json )

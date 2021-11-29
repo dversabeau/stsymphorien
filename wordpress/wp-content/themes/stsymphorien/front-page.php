@@ -7,6 +7,14 @@ get_header();
 ?>
 <main id="primary" class="site-main">
 
+    <?php if (get_field('info')) : ?>
+        <section class="informations">
+            <div class="informations-container">
+                <?php the_field('info'); ?>
+            </div>
+        </section>
+    <?php endif; ?>
+
     <section class="shortlinks">
         <?php if (get_field('lien_1')) : ?>
             <div class="shortlink">
@@ -108,12 +116,30 @@ get_header();
         $echos = new WP_Query($args);
         $index = 0;
         ?>
-	    <?php if ( $echos->have_posts() ) : while ($index < 3) : $echos->the_post(); ?>
+	    <?php if ( $echos->have_posts() ) : while ($index < 1) : $echos->the_post(); ?>
         <div class="echo-container echo-container-<?= $index ?>" style="background-image: url(<?php the_post_thumbnail_url(); ?>)">
             <div class="title-echos title-echo-<?= $index ?>"><?php the_title() ?></div>
-            <a href="<?php the_permalink(); ?>" class="button-echos button-echo-<?= $index ?>">Consulter le magazine</a>
+            <a href="<?php the_permalink(); ?>" class="button-echos button-echo-<?= $index ?>">Consulter la revue</a>
         </div>
         <?php $index++ ?>
+	    <?php endwhile; else : ?>
+            <p>Pas de magazine disponible</p>
+	    <?php endif; ?>
+	    <?php wp_reset_postdata(); ?>
+
+	    <?php $args = [
+		    'post_type' => 'gazettes',
+		    'post_per_page' => 2
+	    ];
+	    $echos = new WP_Query($args);
+	    $index = 0;
+	    ?>
+	    <?php if ( $echos->have_posts() ) : while ($index < 2) : $echos->the_post(); ?>
+            <div class="gazette-container gazette-container-<?= $index ?>" style="background-image: url(<?php the_post_thumbnail_url(); ?>)">
+                <div class="title-gazettes"><?php the_title() ?></div>
+                <a href="<?php the_permalink(); ?>" class="button-gazettes button-gazette-<?= $index ?>">Consulter le magazine</a>
+            </div>
+		    <?php $index++ ?>
 	    <?php endwhile; else : ?>
             <p>Pas de magazine disponible</p>
 	    <?php endif; ?>

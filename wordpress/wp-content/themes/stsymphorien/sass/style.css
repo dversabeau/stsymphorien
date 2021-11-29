@@ -479,12 +479,14 @@ html, body {
 .site-main {
   max-width: 1200px;
   margin-top: 50px;
+  width: 100%;
 }
 
 .body-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 @media only screen and (min-width: 1025px) {
@@ -882,6 +884,16 @@ textarea {
 /*--------------------------------------------------------------
 # Pages
 --------------------------------------------------------------*/
+.informations {
+  width: 100%;
+  height: auto;
+  margin-bottom: 50px;
+}
+.informations .informations-container {
+  padding: 15px 25px 8px 25px;
+  background-color: #fbc02d;
+}
+
 .shortlinks {
   width: 100%;
   display: grid;
@@ -1087,7 +1099,7 @@ textarea {
   width: 100vw;
   max-width: 1200px;
 }
-.magazines .echo-container {
+.magazines .echo-container, .magazines .gazette-container {
   height: 300px;
   width: 100%;
   background: no-repeat center center;
@@ -1108,7 +1120,7 @@ textarea {
   content: "";
   background: linear-gradient(180deg, rgba(207, 79, 77, 0.2) 0%, rgba(207, 79, 77, 0.05) 100%);
 }
-.magazines .echo-container-1:before {
+.magazines .gazette-container-0:before {
   position: absolute;
   top: 0;
   left: 0;
@@ -1117,7 +1129,7 @@ textarea {
   content: "";
   background: linear-gradient(180deg, rgba(0, 131, 143, 0.2) 0%, rgba(0, 131, 143, 0.05) 100%);
 }
-.magazines .echo-container-2:before {
+.magazines .gazette-container-1:before {
   position: absolute;
   top: 0;
   left: 0;
@@ -1126,14 +1138,14 @@ textarea {
   content: "";
   background: linear-gradient(180deg, rgba(251, 192, 45, 0.2) 0%, rgba(251, 192, 45, 0.05) 100%);
 }
-.magazines .title-echos {
+.magazines .title-echos, .magazines .title-gazettes {
   color: white;
   font-size: 20px;
   text-align: center;
   font-weight: 700;
   z-index: 2;
 }
-.magazines .button-echos {
+.magazines .button-echos, .magazines .button-gazettes {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1149,11 +1161,23 @@ textarea {
 .magazines .button-echo-0 {
   background-color: #CF4F4D;
 }
-.magazines .button-echo-1 {
+.magazines .button-echo-0:hover {
+  color: #CF4F4D;
+  background-color: white;
+}
+.magazines .button-gazette-0 {
   background-color: #00838f;
 }
-.magazines .button-echo-2 {
+.magazines .button-gazette-0:hover {
+  color: #00838f;
+  background-color: white;
+}
+.magazines .button-gazette-1 {
   background-color: #fbc02d;
+}
+.magazines .button-gazette-1:hover {
+  color: #fbc02d;
+  background-color: white;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1280,6 +1304,53 @@ textarea {
     display: block;
   }
 }
+.wp-block-contact-form-7-contact-form-selector {
+  width: 100%;
+  padding: 25px;
+}
+.wp-block-contact-form-7-contact-form-selector input[type=text],
+.wp-block-contact-form-7-contact-form-selector input[type=email] {
+  width: 100%;
+  max-width: 500px;
+}
+.wp-block-contact-form-7-contact-form-selector textarea {
+  resize: none;
+}
+.wp-block-contact-form-7-contact-form-selector .wpcf7-list-item {
+  padding: 25px 0;
+  margin: 0;
+}
+.wp-block-contact-form-7-contact-form-selector .wpcf7-form-control.has-spinner.wpcf7-submit {
+  background: #CF4F4D;
+  color: white;
+  border: 2px solid #CF4F4D;
+  padding: 6px 30px 8px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+.wp-block-contact-form-7-contact-form-selector .wpcf7-form-control.has-spinner.wpcf7-submit:hover {
+  background-color: white;
+  color: #CF4F4D;
+  transition: 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+article.gazettes,
+article.echos {
+  width: 90%;
+}
+
+@media only screen and (min-width: 1025px) {
+  article.gazettes,
+article.echos {
+    width: 50%;
+  }
+}
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
@@ -1350,6 +1421,9 @@ textarea {
 }
 .topbar .tophoraire .tophoraire-text-container a {
   text-decoration: underline;
+}
+.topbar .topsocial a {
+  margin-right: 8px;
 }
 
 @media only screen and (min-width: 1025px) {
@@ -1690,6 +1764,7 @@ textarea {
 .posts-navigation .nav-links,
 .post-navigation .nav-links {
   display: flex;
+  margin-top: 50px;
 }
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
@@ -1709,13 +1784,14 @@ textarea {
   display: block;
 }
 
+article {
+  margin: 0 25px;
+}
+
 .type-page,
 .type-post,
 .error-404,
 .page-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin: 0 25px 50px 25px;
 }
 .type-page h1,
@@ -1748,6 +1824,13 @@ textarea {
 .page-header h5,
 .page-header h6 {
   color: #bd3741;
+}
+
+.error-404,
+.page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .updated:not(.published) {

@@ -17,6 +17,7 @@
             <div class="entry-meta">
                 <p>Publié le <?php the_date() ?></p>
             </div><!-- .entry-meta -->
+            <div><?php the_post_thumbnail() ?></div>
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 

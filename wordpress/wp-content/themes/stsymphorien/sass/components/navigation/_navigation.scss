@@ -74,6 +74,12 @@
 		}
 	}
 
+	.topsocial{
+		a{
+			margin-right: 8px;
+		}
+	}
+
 }
 
 @media only screen and (min-width: $breakpoint__desktop-navbar) {
@@ -499,6 +505,7 @@
 
 	.nav-links {
 		display: flex;
+		margin-top: 50px;
 	}
 
 	.nav-previous {

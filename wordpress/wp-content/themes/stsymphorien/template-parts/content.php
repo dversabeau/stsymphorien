@@ -26,7 +26,9 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php stsymphorien_post_thumbnail(); ?>
+    <?php if (get_post_type() !== 'gazettes' && get_post_type() !== 'echos') : ?>
+	    <?php stsymphorien_post_thumbnail(); ?>
+    <?php endif; ?>
 
 	<div class="entry-content">
 		<?php
@@ -56,8 +58,8 @@
         <?php if ('post' === get_post_type() ) {
 			the_post_navigation(
 				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'stsymphorien' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'stsymphorien' ) . '</span> <span class="nav-title">%title</span>',
+					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Précédent :', 'stsymphorien' ) . '</span> <span class="nav-title">%title</span>',
+					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Suivant :', 'stsymphorien' ) . '</span> <span class="nav-title">%title</span>',
 				)
 			);
 		} ?>

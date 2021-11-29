@@ -52,9 +52,14 @@
             <div class="topsocial">
                 <?php if (get_field('facebook')) : ?>
                     <a href="<?php the_field('facebook'); ?>">
-                        <img src="<?php get_template_directory();?>/wp-content/images/logo-facebook.svg" alt="logo facebook">
+                        <img src="<?php get_template_directory();?>/wp-content/images/logo-facebook-white.svg" alt="logo facebook">
                     </a>
                 <?php endif; ?>
+	            <?php if (get_field('intramuros')) : ?>
+                    <a href="<?php the_field('intramuros'); ?>">
+                        <img src="<?php get_template_directory();?>/wp-content/images/logo-intramuros.png" alt="logo intramuros">
+                    </a>
+	            <?php endif; ?>
                 <?php wp_reset_postdata() ?>
             </div>
             <div class="toplogin">
@@ -71,13 +76,13 @@
                 </div>
 
                 <div class="header-mobile">
-                    <img src="<?php get_field('page-header') ? the_field('page-header') : get_template_directory();?>/wp-content/images/accueil-optimise-768x311.jpg" alt="Image d'en-tête">
+                    <img src="<?php get_field('page-header') ? the_field('page-header') : get_template_directory() . "/wp-content/images/accueil-optimise-768x311.jpg"?>" alt="Image d'en-tête">
                 </div>
             <?php endif ?>
 
             <?php if (!is_front_page()) : ?>
                 <div class="header-page">
-                    <img src="<?php get_field('page-header') ? the_field('page-header') : get_template_directory();?>/wp-content/images/accueil-optimise.jpg" alt="Image d'en-tête">
+                    <img src="<?php get_field('page-header') ? the_field('page-header') : get_template_directory() . "/wp-content/images/accueil-optimise.jpg" ;?>" alt="Image d'en-tête">
                 </div>
             <?php endif ?>
 	        <?php custom_breadcrumbs(); ?>

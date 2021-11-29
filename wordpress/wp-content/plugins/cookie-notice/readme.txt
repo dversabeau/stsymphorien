@@ -4,7 +4,7 @@ Tags: gdpr, ccpa, cookies, consent, compliance
 Requires at least: 4.3
 Requires PHP: 5.3
 Tested up to: 5.8.1
-Stable tag: 2.1.4
+Stable tag: 2.1.5
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
@@ -117,6 +117,9 @@ Yes! The plugin + web appliaction version includes technical compliance features
 1. screenshot-1.png
 
 == Changelog ==
+
+= 2.1.5 =
+* Tweak: Additional sanitization applied
 
 = 2.1.4 =
 * Fix: Wordpress 5.8 widgets compatibility
@@ -391,5 +394,5 @@ Initial release
 
 == Upgrade Notice ==
 
-= 2.1.4 =
-* Fix: Wordpress 5.8 widgets compatibility
+= 2.1.5 =
+* Tweak: Additional sanitization applied

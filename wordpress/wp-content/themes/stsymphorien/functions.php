@@ -188,10 +188,24 @@ function st_symphorien_init () {
 		'supports' => ['title', 'editor', 'thumbnail'],
 		'custom-fields' => true,
 		'show_in_rest' => true,
+		'has_archive' => true,
 	]);
+
+	register_post_type('gazettes', [
+
+		'labels' => ['name' => 'Gazettes', 'singular_name' => 'Gazette'],
+		'public' => true,
+		'menu_position' => 3,
+		'menu_icon' => 'dashicons-media-spreadsheet',
+		'supports' => ['title', 'editor', 'thumbnail'],
+		'custom-fields' => true,
+		'show_in_rest' => true,
+		'has_archive' => true,
+	]);
+
 	register_post_type('galerie', [
 
-		'labels' => ['name' => 'Galerie', 'singular_name' => 'Galerie'],
+		'labels' => ['name' => 'Galerie de photos', 'singular_name' => 'Galerie de photos'],
 		'public' => true,
 		'menu_position' => 3,
 		'menu_icon' => 'dashicons-welcome-widgets-menus',
@@ -202,18 +216,6 @@ function st_symphorien_init () {
 }
 add_action('init', 'st_symphorien_init');
 
-//function set_echos_post_thumbnail($post_id) {
-//
-//	if(get_post_type('echos')) {
-//
-//		$echos = get_field('pdf', $post_id);
-//		$attachment_id = $echos['ID'];
-//
-//		update_post_meta($post_id, '_thumbnail_id', $attachment_id);
-//	}
-//
-//}
-//add_action('save_post', 'set_echos_post_thumbnail');
 
 //Filtre qui sert à recuperer des images en version plus grande
 add_filter('shortcode_atts_gallery','force_large_images',10,3);

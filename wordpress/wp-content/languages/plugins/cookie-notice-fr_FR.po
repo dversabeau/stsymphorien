@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Cookie Notice &amp; Compliance for GDPR / CCPA - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-04-20 16:52:28+0000\n"
+"PO-Revision-Date: 2021-10-18 12:46:54+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -284,6 +284,10 @@ msgstr "Le texte du bouton pour révoquer le consentement."
 msgid "Enable to give to the user the possibility to revoke their consent <i>(requires \"Refuse consent\" option enabled)</i>."
 msgstr "Activer pour donner à l’utilisateur la possibilité de révoquer son consentement <i>(nécessite que l’option « Refuser les cookies » soit activée)</i>."
 
+#: includes/settings.php:122
+msgid "Revoke Cookies"
+msgstr "Révoquer les cookies"
+
 #: includes/settings.php:511
 msgid "Reloading"
 msgstr "Rechargement"
@@ -444,7 +448,7 @@ msgstr "Saisissez le message de notification des cookies."
 msgid "We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it."
 msgstr "Nous utilisons des cookies pour vous garantir la meilleure expérience sur notre site web. Si vous continuez à utiliser ce site, nous supposerons que vous en êtes satisfait."
 
-#: cookie-notice.php:470
+#: cookie-notice.php:482
 msgid "Settings"
 msgstr "Réglages"
 
